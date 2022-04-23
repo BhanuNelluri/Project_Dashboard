@@ -15,17 +15,19 @@ const ListsContainer = styled.div`
 const StyledInput = styled.input`
   width: 100px;
   // outline-color: blue;
-  border: none;
+  border:outset;
   border-radius: 3px;
   margin-bottom: 10px;
   margin-left: 20px;
-  margin-Top: 20px;
+  margin-Top: 25px;
   height:30px;
 `;
 const Display = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
+  font-size :20px;
+  color:#B4E197;
 `;
 
 
