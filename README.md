@@ -35,9 +35,9 @@ $ npm start
 
 ## Dependencies
 
-- [redux]: to manage the global state of the app
-- [react-textarea-autosize]: a react component that will render a textarea that resizes itself when needed
-- [react-beautiful-dnd]: A beautiful library to implement drag and drop functionalities
+- [redux]: to manage the global state of the app.
+- [react-textarea-autosize]: a react component that will render a textarea that resizes itself when needed.
+- [react-beautiful-dnd]: A beautiful library to implement drag and drop functionalities.
 - [uuid]: to generate unique ids. 
-- [Material-UI]:
-- [npm]:
+- [Material-UI]: Used to create a user Interface in React Applications.
+- [npm]: It is the package manager for the Node JavaScript platform.
