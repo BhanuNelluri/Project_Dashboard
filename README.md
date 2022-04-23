@@ -32,3 +32,12 @@ Run development
 ```
 $ npm start
 ```
+
+## Dependencies
+
+- [redux]: to manage the global state of the app
+- [react-textarea-autosize]: a react component that will render a textarea that resizes itself when needed
+- [react-beautiful-dnd]: A beautiful library to implement drag and drop functionalities
+- [uuid]: to generate unique ids. 
+- [Material-UI]:
+- [npm]:
