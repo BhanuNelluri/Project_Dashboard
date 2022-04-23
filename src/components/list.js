@@ -7,15 +7,16 @@ import { connect } from "react-redux";
 import { editTitle, deleteList } from "../actions/lists";
 import Icon from "@material-ui/core/Icon";
 
+
 const ListContainer = styled.div`
-  background-color: #dfe3e6;
+  background-color: ${props => (props.isSelected ? `#DEB6AB` : `#dfe3e6`)};
   border-radius: 3px;
   width: 300px;
   padding: 8px;
   height: 100%;
   margin: 0 8px 0 0;
 `;
-
+// console.log(this.props);
 const StyledInput = styled.input`
   width: 100%;
   border: none;
@@ -44,19 +45,18 @@ const DeleteButton = styled(Icon)`
 `;
 
 const ListTitle = styled.h4`
+    color: ${props => (props.isSelected ? `#8E3200` : `black`)};
+    font-weight: ${props => (props.isSelected ? `1000` : `700`)};
+    font-size: ${props => (props.isSelected ? `30px` : `20px`)};
   transition: background 0.3s ease-in;
   ${TitleContainer}:hover & {
-    background: #ccc;
+    background: ${props => (props.isSelected ? `none` : `#ccc`)};
   }
 `;
-
-const TrelloList = ({ title, cards, listID, index, dispatch }) => {
-  console.log(title);
-  console.log(cards);
-  console.log(listID);
+const TrelloList = ({ title, cards, listID, index,isSelected, dispatch }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [listTitle, setListTitle] = useState(title);
-
+  console.log(listID);
   const renderEditInput = () => {
     return (
       <form onSubmit={handleFinishEditing}>
@@ -94,6 +94,7 @@ const TrelloList = ({ title, cards, listID, index, dispatch }) => {
     <Draggable draggableId={String(listID)} index={index}>
       {provided => (
         <ListContainer
+          isSelected = {isSelected?true:false}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
           ref={provided.innerRef}
@@ -105,11 +106,11 @@ const TrelloList = ({ title, cards, listID, index, dispatch }) => {
                   {isEditing ? (
                     renderEditInput()
                   ) : (
-                    <TitleContainer onClick={() => setIsEditing(true)}>
-                      <ListTitle>{listTitle}</ListTitle>
-                      <DeleteButton onClick={handleDeleteList}>
+                    <TitleContainer onClick={() => {listID=='list-0'?setIsEditing(false):setIsEditing(true)}}>
+                      <ListTitle isSelected = {isSelected?true:false}>{listTitle}</ListTitle>
+                      {listID!=='list-0' && <DeleteButton onClick={handleDeleteList}>
                         delete
-                      </DeleteButton>
+                      </DeleteButton>}
                     </TitleContainer>
                   )}
                 </div>

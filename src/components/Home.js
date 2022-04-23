@@ -97,6 +97,7 @@ class Home extends PureComponent {
                       title={list.title}
                       cards={cardsList}
                       index={index}
+                      isSelected = {list.id==='list-0'?true:false}
                     />
                   );
                

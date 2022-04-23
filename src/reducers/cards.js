@@ -2,7 +2,7 @@ import { ADD_CARD,EDIT_CARD,DELETE_CARD } from "../constants/ActionTypes";
 
 const initialState = {
   "card-0": {
-    text: "Sample Card",
+    text: "Sample Highlight",
     id: `card-0`,
     list: "list-0"
   }

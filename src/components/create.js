@@ -104,7 +104,7 @@ class TrelloCreate extends React.PureComponent {
       </TrelloForm>
     ) : (
       <TrelloOpenForm list={list} onClick={this.openForm}>
-        {list ? "Add another list" : "Add another card"}
+        {list ? "Add another Container" : "Add another Highlight"}
       </TrelloOpenForm>
     );
   }
